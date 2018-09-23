@@ -28,8 +28,8 @@ class EntitySerialFieldType extends FieldItemBase {
    */
   public static function defaultStorageSettings() {
     return [
-      'starts_with_id' => 0,
-      'starts_with_node_id' => 1,
+      'starts_with_id' => 1,
+      'starts_with_entity_id' => 1,
       'unsigned' => FALSE,
       // Valid size property values include: 'tiny', 'small', 'medium', 'normal'
       // and 'big'.
@@ -85,16 +85,16 @@ class EntitySerialFieldType extends FieldItemBase {
       '#title' => t('Starts with id'),
       '#default_value' => $this->getSetting('starts_with_id'),
       '#required' => TRUE,
-      '#description' => t('The serial number to start with.'),
+      '#description' => t('The serial number to start from.'),
       '#min' => 1,
       '#disabled' => $has_data,
     ];
-    $elements['starts_with_node_id'] = [
+    $elements['starts_with_entity_id'] = [
       '#type' => 'number',
-      '#title' => t('Starts with node'),
-      '#default_value' => $this->getSetting('starts_with_node_id'),
+      '#title' => t('Starts with entity'),
+      '#default_value' => $this->getSetting('starts_with_entity_id'),
       '#required' => TRUE,
-      '#description' => t('The node id to start from.'),
+      '#description' => t('The entity id to start from.'),
       '#min' => 1,
       '#disabled' => $has_data,
     ];
