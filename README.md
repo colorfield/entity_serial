@@ -18,3 +18,7 @@ When a sequence id within a bundle is needed (e.g. an invoice number, ...).
 Add the field to an entity type bundle (e.g. _Article_ content type).
 Set the id to start from and the node id that will be used 
 as the first entity to count from. 
+
+## Roadmap
+
+- Optionally initialize values for existing entities.

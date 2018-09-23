@@ -74,7 +74,7 @@ class EntitySerialFormatter extends FormatterBase {
 
     $entity = $item->getEntity();
     $entityId = $entity->id();
-    $entityIdStart = (int) $fieldSettings['starts_with_node_id'];
+    $entityIdStart = (int) $fieldSettings['starts_with_entity_id'];
     $serialStart = (int) $fieldSettings['starts_with_id'];
 
     if ($entityId < $entityIdStart) {
@@ -87,12 +87,11 @@ class EntitySerialFormatter extends FormatterBase {
         ->condition('entity_bundle', $entity->bundle())
         ->condition('entity_id', $entityIdStart, '>=')
         ->condition('entity_id', $entityId, '<');
-      $amountNodes = $query->countQuery()->execute()->fetchField();
+      $amountEntities = $query->countQuery()->execute()->fetchField();
 
-      $result = $serialStart + $amountNodes;
+      $result = $serialStart + $amountEntities;
     }
-
-    return $result;
+    return number_format($result, 0, '', '');
   }
 
 }
