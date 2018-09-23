@@ -16,6 +16,7 @@ use Drupal\Core\TypedData\DataDefinition;
  *   id = "entity_serial_field_type",
  *   label = @Translation("Entity serial"),
  *   description = @Translation("Generates serial number based on entity type or bundle."),
+ *   category = @Translation("Number"),
  *   default_widget = "entity_serial_widget",
  *   default_formatter = "entity_serial_formatter"
  * )
@@ -90,7 +91,7 @@ class EntitySerialFieldType extends FieldItemBase {
     ];
     $elements['starts_with_node_id'] = [
       '#type' => 'number',
-      '#title' => t('Start with node'),
+      '#title' => t('Starts with node'),
       '#default_value' => $this->getSetting('starts_with_node_id'),
       '#required' => TRUE,
       '#description' => t('The node id to start from.'),

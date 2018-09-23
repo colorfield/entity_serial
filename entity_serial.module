@@ -18,7 +18,7 @@ function entity_serial_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.entity_serial':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Calculates serial number based on entity type or bundle.') . '</p>';
+      $output .= '<p>' . t('Per bundle computed serial number.') . '</p>';
       return $output;
 
     default:

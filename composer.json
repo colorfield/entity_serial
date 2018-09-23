@@ -1,7 +1,7 @@
 {
   "name": "drupal/entity_serial",
   "type": "drupal-module",
-  "description": "Calculates serial number based on entity type or bundle.",
+  "description": "Per bundle computed serial number.",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
   "homepage": "https://www.drupal.org/project/entity_serial",
