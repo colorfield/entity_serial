@@ -14,7 +14,7 @@ use Drupal\Core\TypedData\DataDefinition;
  *
  * @FieldType(
  *   id = "entity_serial_field_type",
- *   label = @Translation("Entity serial"),
+ *   label = @Translation("Entity serial (integer)"),
  *   description = @Translation("Generates serial number based on entity type or bundle."),
  *   category = @Translation("Number"),
  *   default_widget = "entity_serial_widget",
@@ -45,7 +45,6 @@ class EntitySerialFieldType extends FieldItemBase {
     $properties['value'] = DataDefinition::create('integer')
       ->setLabel(new TranslatableMarkup('Serial value'))
       ->setRequired(TRUE);
-
     return $properties;
   }
 
@@ -101,8 +100,6 @@ class EntitySerialFieldType extends FieldItemBase {
 
     return $elements;
   }
-
-  // @todo compute value
 
   /**
    * {@inheritdoc}
